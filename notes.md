@@ -41,6 +41,25 @@ const nextConfig = {
     - HTTP Methods
         - Only API ROutes with Node.js (Default)
         - Edge Runtime with Fetch API
+    - 'handler' functions upto next 12
+        - Request/Response
+            - switch..case
+                - request.method
+                    - GET, POST, PUT, DELETE
+    - The 'route.tsx'
+        - Present in 'api' folder, conatining the 'sub-folder' for each REST API
+            - src/app/api/[Sub-Folder]/route.tsx                
+            - The 'next/server' module containing
+                - NextRequest
+                    - The 'url' object
+                        - The 'searchParams' and 'pathname'
+                            - USes properties are used for the URL Parameters aka querystring parameters
+                        - the 'seacrhParams.get('PARAMETER-NAME')' to read the value
+                - NextResponse
+            - next/server module is capable of reading the HTTP Request Message
+                - New Generation API Routes for GET/POST/PUT/DELETE methods for REST APIs    
+             
+
 - Server-Side Components for
     - async component for Direct Server-Side Resource Access
         - NO State Code
@@ -51,5 +70,7 @@ const nextConfig = {
     - Most Same as the React-Redux with toolkit
 - BFF for Managing Application Complexity with pattern
     - Internal and External Service availabilty to the Front-End Components
+    - The Server-Side MUST modify the design (use a pattern) to make sure that the Endpoint MUST be exposed to the Front-end based on the functional requirement 
+        - Decouple the FE from BE
 - Internationalization             
 

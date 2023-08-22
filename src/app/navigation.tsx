@@ -13,6 +13,9 @@ const NavigationLink=()=>{
                         <th>
                             <Link href={'/productinfo'}>Product</Link>
                         </th>
+                        <th>
+                            <Link href={'/ecomm'}>Ecommerce</Link>
+                        </th>
                     </tr>
                 </thead>
             </table>

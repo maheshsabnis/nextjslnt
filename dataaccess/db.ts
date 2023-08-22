@@ -18,7 +18,7 @@ export default async function ExecuteQuery(query:string){
     try{
       let connectionPool = await sql.connect(config);  
       let response = await connectionPool.request().query(query);
-      return response;
+      return response.recordset;
     }catch(error:any){
         console.log(error);
     }

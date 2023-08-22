@@ -1,8 +1,10 @@
-import { columns } from 'mssql';
+'use client'
+import Link from 'next/link';
 import React from 'react'
 
 type dataProps= {
     dataSource:Array<any>;
+     
 }
 
 const DataTable = (props:dataProps) => {
@@ -35,6 +37,11 @@ const DataTable = (props:dataProps) => {
                           <td className='border-4' key={index}>{product[column]}</td>
                         ))
                       }
+                      {/* <td>
+                          <button>
+                             <Link href={`/productinfo/${product.ProductRowId}`}>Show Details</Link>
+                          </button>
+                      </td> */}
                    </tr>
                  ))
               }
