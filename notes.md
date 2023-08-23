@@ -68,6 +68,20 @@ const nextConfig = {
     - Managing REquest and Response
 - Redux Integration
     - Most Same as the React-Redux with toolkit
+    - IMP: We have Server-Side Components, those can directly access the DIstributed Cache that contains state of the data that is frequently Required
+    - Since the REST APIs are deployed on same host as that of the Components the Communication Time is less as comare to the seperatly accessible REST APIs from traditional React App
+        - React + Redux + Middleware (SAGA / Thunk)    
+    - If in the Next.js the App State management is needed then use following
+        - Use default Middleware provided by Redux Toolkit
+        - Use the Same Object Model for DTO for defining the state in store 
+            - We do not have any generators, instaed use the generator object provioded by the ReduxJs Toolkit  
+
+        - the 'createApi()' uses the 'UseQuery()' hook type object that helps to generate the query methods those acts as reducers    
+            - UseQuery() has following properties
+                - isFetching: boolean, that internally manages the progress
+                - isLoading: boolean, that uses to manage the received completion and made available for UI
+                - data, an actual data
+                - error, error occur if any
 - BFF for Managing Application Complexity with pattern
     - Internal and External Service availabilty to the Front-End Components
     - The Server-Side MUST modify the design (use a pattern) to make sure that the Endpoint MUST be exposed to the Front-end based on the functional requirement 
