@@ -86,5 +86,36 @@ const nextConfig = {
     - Internal and External Service availabilty to the Front-End Components
     - The Server-Side MUST modify the design (use a pattern) to make sure that the Endpoint MUST be exposed to the Front-end based on the functional requirement 
         - Decouple the FE from BE
-- Internationalization             
+
+- Middleware Concept
+    - A Softwareb component that will be executed for each request
+    - Use Cases
+        - Creating Request Log on Server
+        - Handling the Rewrite / Redicrection based on the 
+            - Header Valeus
+                - Authentication
+                - Version
+            - Cookies
+        - Internationalization
+            - i18next
+            - i18next-resources-to-backend   
+            - create following folder structure for the app
+                -  [lng]
+                    - Dynamic Route for language specific pages  
+                    - layout.tsx
+                        - parameter for language selection
+                    - page.tsx
+                        - Links for language selection
+                - The 'i18n' folder
+                    - The 'locales' folder
+                        - sub-folders for each culture
+                            - de
+                            - en
+                            - fr             
+    - next/auth package
+        - Uses the default middleware for Implemeting Security with OAuth Providers
+            - Git Auth
+            - Google
+            - Microsoft Identity
+            - ...other               
 
